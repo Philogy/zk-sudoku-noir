@@ -31,6 +31,7 @@ fn check_solution_lines(solution: [u4; N2]) {
 
 
 fn check_solution_blocks(solution: [u4; N2]) {
+  // block(1, 1)
   constrain solution[0] == solution[1];
   constrain solution[0] == solution[2];
   constrain solution[0] == solution[9];
@@ -67,6 +68,8 @@ fn check_solution_blocks(solution: [u4; N2]) {
   constrain solution[18] == solution[19];
   constrain solution[18] == solution[20];
   constrain solution[19] == solution[20];
+
+  // block(1, 2)
   constrain solution[3] == solution[4];
   constrain solution[3] == solution[5];
   constrain solution[3] == solution[12];
@@ -103,6 +106,8 @@ fn check_solution_blocks(solution: [u4; N2]) {
   constrain solution[21] == solution[22];
   constrain solution[21] == solution[23];
   constrain solution[22] == solution[23];
+
+  // block(1, 3)
   constrain solution[6] == solution[7];
   constrain solution[6] == solution[8];
   constrain solution[6] == solution[15];
@@ -139,6 +144,8 @@ fn check_solution_blocks(solution: [u4; N2]) {
   constrain solution[24] == solution[25];
   constrain solution[24] == solution[26];
   constrain solution[25] == solution[26];
+
+  // block(2, 1)
   constrain solution[27] == solution[28];
   constrain solution[27] == solution[29];
   constrain solution[27] == solution[36];
@@ -175,6 +182,8 @@ fn check_solution_blocks(solution: [u4; N2]) {
   constrain solution[45] == solution[46];
   constrain solution[45] == solution[47];
   constrain solution[46] == solution[47];
+
+  // block(2, 2)
   constrain solution[30] == solution[31];
   constrain solution[30] == solution[32];
   constrain solution[30] == solution[39];
@@ -211,6 +220,8 @@ fn check_solution_blocks(solution: [u4; N2]) {
   constrain solution[48] == solution[49];
   constrain solution[48] == solution[50];
   constrain solution[49] == solution[50];
+
+  // block(2, 3)
   constrain solution[33] == solution[34];
   constrain solution[33] == solution[35];
   constrain solution[33] == solution[42];
@@ -247,6 +258,8 @@ fn check_solution_blocks(solution: [u4; N2]) {
   constrain solution[51] == solution[52];
   constrain solution[51] == solution[53];
   constrain solution[52] == solution[53];
+
+  // block(3, 1)
   constrain solution[54] == solution[55];
   constrain solution[54] == solution[56];
   constrain solution[54] == solution[63];
@@ -283,6 +296,8 @@ fn check_solution_blocks(solution: [u4; N2]) {
   constrain solution[72] == solution[73];
   constrain solution[72] == solution[74];
   constrain solution[73] == solution[74];
+
+  // block(3, 2)
   constrain solution[57] == solution[58];
   constrain solution[57] == solution[59];
   constrain solution[57] == solution[66];
@@ -319,6 +334,8 @@ fn check_solution_blocks(solution: [u4; N2]) {
   constrain solution[75] == solution[76];
   constrain solution[75] == solution[77];
   constrain solution[76] == solution[77];
+
+  // block(3, 3)
   constrain solution[60] == solution[61];
   constrain solution[60] == solution[62];
   constrain solution[60] == solution[69];
