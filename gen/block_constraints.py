@@ -15,7 +15,7 @@ def main():
     for x, y, block_constraints in cs:
         print(f'\n  // block({x + 1}, {y + 1})')
         for i, j in block_constraints:
-            print(f'  constrain solution[{i}] == solution[{j}];')
+            print(f'  constrain solution[{i}] != solution[{j}];')
 
 
 if __name__ == '__main__':
