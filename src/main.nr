@@ -29,45 +29,15 @@ fn check_solution_lines(solution: [u4; N2]) {
 }
 
 fn check_solution_blocks(solution: [u4; N2]) {
+  let block_offsets: [comptime Field; N] = [0, 1, 2, 9, 10, 11, 18, 19, 20];
   for x in 0..Nh {
     for y in 0..Nh {
       let baseInd: comptime Field = x * 27 + y * 3;
-      constrain solution[baseInd +  0] != solution[baseInd +  1];
-      constrain solution[baseInd +  0] != solution[baseInd +  2];
-      constrain solution[baseInd +  0] != solution[baseInd +  9];
-      constrain solution[baseInd +  0] != solution[baseInd + 10];
-      constrain solution[baseInd +  0] != solution[baseInd + 11];
-      constrain solution[baseInd +  0] != solution[baseInd + 18];
-      constrain solution[baseInd +  0] != solution[baseInd + 19];
-      constrain solution[baseInd +  0] != solution[baseInd + 20];
-      constrain solution[baseInd +  1] != solution[baseInd +  2];
-      constrain solution[baseInd +  1] != solution[baseInd +  9];
-      constrain solution[baseInd +  1] != solution[baseInd + 10];
-      constrain solution[baseInd +  1] != solution[baseInd + 11];
-      constrain solution[baseInd +  1] != solution[baseInd + 18];
-      constrain solution[baseInd +  1] != solution[baseInd + 19];
-      constrain solution[baseInd +  1] != solution[baseInd + 20];
-      constrain solution[baseInd +  2] != solution[baseInd +  9];
-      constrain solution[baseInd +  2] != solution[baseInd + 10];
-      constrain solution[baseInd +  2] != solution[baseInd + 11];
-      constrain solution[baseInd +  2] != solution[baseInd + 18];
-      constrain solution[baseInd +  2] != solution[baseInd + 19];
-      constrain solution[baseInd +  2] != solution[baseInd + 20];
-      constrain solution[baseInd +  9] != solution[baseInd + 10];
-      constrain solution[baseInd +  9] != solution[baseInd + 11];
-      constrain solution[baseInd +  9] != solution[baseInd + 18];
-      constrain solution[baseInd +  9] != solution[baseInd + 19];
-      constrain solution[baseInd +  9] != solution[baseInd + 20];
-      constrain solution[baseInd + 10] != solution[baseInd + 11];
-      constrain solution[baseInd + 10] != solution[baseInd + 18];
-      constrain solution[baseInd + 10] != solution[baseInd + 19];
-      constrain solution[baseInd + 10] != solution[baseInd + 20];
-      constrain solution[baseInd + 11] != solution[baseInd + 18];
-      constrain solution[baseInd + 11] != solution[baseInd + 19];
-      constrain solution[baseInd + 11] != solution[baseInd + 20];
-      constrain solution[baseInd + 18] != solution[baseInd + 19];
-      constrain solution[baseInd + 18] != solution[baseInd + 20];
-      constrain solution[baseInd + 19] != solution[baseInd + 20];
+      for i in 0..N {
+        for j in (i+1)..N {
+          constrain solution[baseInd + block_offsets[i]] != solution[baseInd + block_offsets[j]];
+        }
+      }
     }
   }
 }
